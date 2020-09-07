@@ -1,0 +1,15 @@
+Host foster
+  Hostname foster.cs.scitec.kobe-u.ac.jp
+  User d055
+  IdentityFile ~/.ssh/id_rsa
+
+Host f-*
+  ProxyCommand ssh -W %h:%p foster
+
+Host f-victory
+  User z3r0
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 30
+  ForwardAgent yes
+  Hostname 10.34.22.137
+

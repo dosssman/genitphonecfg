@@ -1,0 +1,6 @@
+#!/bin/bash
+# Maybe want a sweep kill of sshd first ?
+killall sshd
+sshd -p 8022
+ssh -R 33222:localhost:8022 foster
+# Consider making the reverse shell connection background.
