@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh -L 5900:localhost:5900 foster
+ssh -L 5901:localhost:5901 foster
