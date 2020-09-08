@@ -19,6 +19,11 @@ chmod 600 ~/.ssh/authorized_keys
 if [ ! -d ~/bin ]; then
 	mkdir ~/bin
 fi
+
 # Download the reverse ssh helper script to the ~/bin
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell1 -P ~/bin
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell2 -P ~/bin
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel1 -P ~/bin
+wget 
