@@ -1,6 +1,17 @@
 #!/bin/bash
 
-AUTH_FILEPATH=./authkeys_test
+HOME_PREFIX="./m_fakehome"
+AUTH_FILEPATH=$HOME_PREFIX"/.ssh/authorized_keys"
+
+# This is mainly usefull for debugging, to make sure the home folder are create
+if [ ! -d $HOME_PREFIX ]; then
+	mkdir -p $HOME_PREFIX"/.ssh"
+fi
+
+if [ ! -d $HOME_PREFIX"/.ssh" ]; then
+	mkdir $HOME_PREFIX"/.ssh"
+fi
+
 
 # Adding my public keys
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvvIPmUG5yZCAAQ6LSmBfFff+i5MPFI49e2rIsaouec/4iNwOTuE3HJ3pMzhy+jiznwCsJkcC/UjhWwKhMFsrF8fq3Lx7Blpx2jwZ02Ts2dAb452W0EOR5qWUUDd7iro1h5zwVNI0cJdREiJSoqL0mzgIQyvMEJ8IWBfW+UnikshvWEny7J8OkXk64oQeCQ1w7g5/dUeYnXCWNOl7UPIxMzOSa8nu4QgoqiBRYFSn2T2DGZnXAocDy3uFf/E7hPVdNdPINzwGSsrFG3igALzua8m7yax3owYUwb4OjqZNwXRPi/ynNfwNrHenHHjhTIWnEYutShWeKlZehzI1gKvyf z3r0@Z3R04RCH" > $AUTH_FILEPATH
@@ -10,20 +21,27 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjpe+46USgEKglcRjNl3I/irdLgonOZ2AXD/
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuw1bxr3iUpDDBxPBea/cMSCb0jatS8X+x82OayYpe7hfa9sZzphn9hm9PGAjpjZDx4icTAZpg2tmLnlp7oTeg/FFS+DAX2Yqk3KN6NWcAW20HlLPzkV/JgMd6F+8oZGIX16kUGgCyrQJ9gmut+JzAW2p669BewVFfBDZiYhtDb2giEx94v8BLMs28hZQnLbnriUjByD9jKyLyerT2u0KJVaMi9FeGJBCQPPOusFc8VysLHmGYrhH1RAA/DPTHjn3xhhGagKAhI2O+T/Okil1ZHey0S/k1FpPx/Tu8mfVUQbnt1GVGutfGrQeD/hAM6SbyhTmth3aMiFIyAfjAF4rSXgWBaUsSAfDuX+LkDMCbhODkZgyDuN+m2/qqXAVi71rOqfF4H7tht+1WFwInb8NBnYVph8KcavHYu99B3hykfdf/thoTZq+wHZrLLaDr4VfFZCMVQMAc28zmwmPYCfqb8rc68HJMU92gQV/OOvb0ExH4nlNfSdfgDfsqRkZziL0= u0_a110@localhost" >> $AUTH_FILEPATH
 
 # Setting proper permissions on .ssh and authorized_keys
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
+chmod 700 $HOME_PREFIX"/.ssh"
+chmod 600 $HOME_PREFIX"/.ssh/authorized_keys"
 
 # Download the ssh config file to the appropriate location
 
 # Installing the helper scripts
-if [ ! -d ~/bin ]; then
-	mkdir ~/bin
+if [ ! -d $HOME_PREFIX"/bin" ]; then
+	mkdir $HOME_PREFIX"/bin"
 fi
 
+# Download the bashrc
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
+
 # Download the reverse ssh helper script to the ~/bin
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell1 -P ~/bin
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell2 -P ~/bin
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell1 -P $HOME_PREFIX"/bin"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell2 -P $HOME_PREFIX"/bin"
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel1 -P ~/bin
-wget 
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel1 -P $HOME_PREFIX"/bin"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel2 -P $HOME_PREFIX"/bin" 
+
+# Bonus: download youtube-dl script via termux
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -P $HOME_PREFIX"/bin"
+
