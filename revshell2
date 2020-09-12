@@ -6,5 +6,5 @@ sshd -p 8022
 pkill -f "ssh -R 25850:localhost:5901 f-victory -fNT"
 pkill -f "ssh -R 25324:localhost:8022 f-victory -fNT"
 
-ssh -R 25324:localhost:8022 f-victory
-ssh -R 25850:localhost:5901 f-victory
+ssh -R 25324:localhost:8022 f-victory -fNT
+ssh -R 25850:localhost:5901 f-victory -fNT
