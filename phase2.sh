@@ -5,7 +5,7 @@ AUTH_FILEPATH=$HOME_PREFIX"/.ssh/authorized_keys"
 
 # This is mainly usefull for debugging, to make sure the home folder are create
 if [ ! -d $HOME_PREFIX ]; then
-	mkdir -p $HOME_PREFIX"/.ssh"
+	mkdir -p $HOME_PREFIX
 fi
 
 if [ ! -d $HOME_PREFIX"/.ssh" ]; then
@@ -14,6 +14,7 @@ fi
 
 
 # Adding my public keys
+## Note: the first key adding will clear the auth_file so
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvvIPmUG5yZCAAQ6LSmBfFff+i5MPFI49e2rIsaouec/4iNwOTuE3HJ3pMzhy+jiznwCsJkcC/UjhWwKhMFsrF8fq3Lx7Blpx2jwZ02Ts2dAb452W0EOR5qWUUDd7iro1h5zwVNI0cJdREiJSoqL0mzgIQyvMEJ8IWBfW+UnikshvWEny7J8OkXk64oQeCQ1w7g5/dUeYnXCWNOl7UPIxMzOSa8nu4QgoqiBRYFSn2T2DGZnXAocDy3uFf/E7hPVdNdPINzwGSsrFG3igALzua8m7yax3owYUwb4OjqZNwXRPi/ynNfwNrHenHHjhTIWnEYutShWeKlZehzI1gKvyf z3r0@Z3R04RCH" > $AUTH_FILEPATH
 
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCALcv1ARn8lAdVCilVlu0XL/Cdh7JMbOR9m7g0W7W2KlahZtfXJsmU3OPMxXtBfGvEvRTsYNpJMTWzVcJQkh1h+3lskbbvQOnHulKodetxEBUeMaE1MB0/kux8JrShrtTD6RZLxMwMD6Qm+oete0yuqBa+5VRwxn2ZRyAbN9vxOmOrL2kXvol2ms2PgasvQ7IXJgoO+HKdbPhe4Qe5dxeMyT/rfP1jrfvPj/sabX5WR9EeLbpaW0CqpFzYI8rCcFovC5vTwgjDPvuLZgPlCGWbdrBxmopSc9c9yvMXjbEIjys5Tt3fowFFuUxORtnafWJcQm7Uo4zGPQv7lyCfKQB" >> $AUTH_FILEPATH
