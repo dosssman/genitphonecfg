@@ -51,5 +51,8 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshel
 # Bonus: download youtube-dl script via termux
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_PREFIX"/bin/termux-url-opener"
 
+# Bonus: youtubedl config
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/youtube-dl.conf -O $HOME_PREFIX"/.config/youtube-dl.conf"
+
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*
