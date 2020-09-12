@@ -42,8 +42,8 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell1 -
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell2 -O $HOME_PREFIX"/bin/revshell2"
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel1 -O $HOME_PREFIX"/bin/vnctunnel1"
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel2 -O $HOME_PREFIX"/bin/vnctunnel2"
+# wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel1 -O $HOME_PREFIX"/bin/vnctunnel1"
+# wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/vnctunnel2 -O $HOME_PREFIX"/bin/vnctunnel2"
 
 # Bonus: download youtube-dl script via termux
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_PREFIX"/bin/termux-url-opener"

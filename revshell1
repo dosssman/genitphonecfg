@@ -2,5 +2,10 @@
 # Maybe want a sweep kill of sshd first ?
 killall sshd
 sshd -p 8022
-ssh -R 25324:localhost:8022 foster
-# Consider making the reverse shell connection background.
+# TODO: Find a way to kill reverse connection if they already exist.
+## Lazy method
+pkill -f "ssh -R 25324:localhost:8022 foster -fNT"
+pkill -f "ssh -R 25850:localhost:5901 foster -fNT"
+
+ssh -R 25324:localhost:8022 foster -fNT # SSH Reverse shell
+ssh -R 25850:localhost:5901 foster -fNT # VNC Tunnel via reverse shell

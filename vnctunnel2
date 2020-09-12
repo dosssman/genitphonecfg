@@ -1,2 +1,0 @@
-#!/bin/bash
-ssh -L 25850:localhost:5901 f-victory
