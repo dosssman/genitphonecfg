@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOME_PREFIX="./m_fakehome"
+HOME_PREFIX=$HOME # Production mode: affect $HOME
 AUTH_FILEPATH=$HOME_PREFIX"/.ssh/authorized_keys"
 
 # This is mainly usefull for debugging, to make sure the home folder are create
