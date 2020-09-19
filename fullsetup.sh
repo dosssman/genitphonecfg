@@ -51,6 +51,9 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/youtube-dl.
 # Downloading the SENDGRID_API_KEY
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_PREFIX"/SENDGRID_API_KEY"
 
+# Downloading the standalone update script
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/update-config -O $HOME_PREFIX"/bin/update-config"
+
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*
 
@@ -72,5 +75,7 @@ curl --request POST \
   --header "Authorization: Bearer ${MY_SENDGRID_KEY}" \
   --header 'Content-Type: application/json' \
 	--data "$(echo '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "'${PUBKEY}'"}]}')"
+
+echo "### ----------------------------------------------------------------------###"
 
 echo $PUBKEY
