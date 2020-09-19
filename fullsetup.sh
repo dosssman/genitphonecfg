@@ -13,9 +13,6 @@ fi
 if [ ! -d $HOME_PREFIX"/.ssh" ]; then
 	mkdir $HOME_PREFIX"/.ssh"
 fi
-# TODO: Move the dependencies install to the same place at the begining of this file
-# Makes sure to install wget
-pkg install wget -y
 
 # Adding my public keys
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/authorized_keys -O $AUTH_FILEPATH
@@ -51,6 +48,9 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-
 # Bonus: youtubedl config
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/youtube-dl.conf -O $HOME_PREFIX"/.config/youtube-dl.conf"
 
+# Downloading the SENDGRID_API_KEY
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_PREFIX"/SENDGRID_API_KEY"
+
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*
 
@@ -62,7 +62,7 @@ if [ ! -f $HOME_PREFIX"/.ssh/id_rsa" ]; then
 	ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
 
-MY_SENDGRID_KEY=$(cat "./SENDGRID_API_KEY")
+MY_SENDGRID_KEY=$(cat $HOME_PREFIX"/SENDGRID_API_KEY")
 
 DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
 PUBKEY=$(cat ~/.ssh/id_rsa.pub)
