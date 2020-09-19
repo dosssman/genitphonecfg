@@ -31,7 +31,7 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/youtube-dl.
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/update-configs -O $HOME_PREFIX"/bin/update-config"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/update-config -O $HOME_PREFIX"/bin/update-config"
 
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*

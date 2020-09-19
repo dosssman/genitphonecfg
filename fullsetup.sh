@@ -76,6 +76,10 @@ curl --request POST \
   --header 'Content-Type: application/json' \
 	--data "$(echo '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "'${PUBKEY}'"}]}')"
 
+echo ""
+echo ""
 echo "### ----------------------------------------------------------------------###"
+echo ""
+echo ""
 
 echo $PUBKEY
