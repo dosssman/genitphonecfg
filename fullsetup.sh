@@ -71,4 +71,4 @@ curl --request POST \
   --url https://api.sendgrid.com/v3/mail/send \
   --header "Authorization: Bearer ${MY_SENDGRID_KEY}" \
   --header 'Content-Type: application/json' \
-  --data '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "Greetings to myself. Here is the public key:   '${PUBKEY}'"}]}'~
+  --data '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "Greetings to myself. Here is the public key: ${PUBKEY}"}]}'
