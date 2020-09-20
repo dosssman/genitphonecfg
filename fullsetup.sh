@@ -26,6 +26,9 @@ if [ ! -d $HOME_PREFIX"/bin" ]; then
 	mkdir $HOME_PREFIX"/bin"
 fi
 
+if [ ! -d $HOME_PREFIX"/.config" ]; then
+	mkdir $HOME_PREFIX"/.config"
+fi
 # Download the bashrc
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
 
