@@ -1,1 +1,7 @@
-export PATH=$PATH:~/bin
+#!/bin/bash 
+for x in "~/bin"; do
+  case ":$PATH:" in
+    *":$x:"*) :;;
+    *) PATH="$x:$PATH";;
+  esac
+done
