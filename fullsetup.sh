@@ -83,4 +83,4 @@ echo ""
 echo $PUBKEY
 
 # Reloads the current session with the new .bashrc. This better work from the get go hahaha
-source ~/.bahsrc
+source ~/.bashrc
