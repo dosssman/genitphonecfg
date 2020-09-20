@@ -7,8 +7,6 @@ AUTH_FILEPATH=$HOME_PREFIX"/.ssh/authorized_keys"
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/authorized_keys -O $AUTH_FILEPATH
 
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
-# Reloads the current session with the new .bashrc
-source $HOME_PREFIX"/.bahsrc"
 
 # Donwload the sshconfig file
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/m_ssh_config -O $HOME_PREFIX"/.ssh/config"
@@ -35,3 +33,6 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/update-conf
 
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*
+
+# Reloads the current session with the new .bashrc
+source ~/.bashrc
