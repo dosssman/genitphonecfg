@@ -28,8 +28,6 @@ fi
 
 # Download the bashrc
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
-# Reloads the current session with the new .bashrc
-source $HOME_PREFIX"/.bahsrc"
 
 # Donwload the sshconfig file
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/m_ssh_config -O $HOME_PREFIX"/.ssh/config"
@@ -83,3 +81,6 @@ echo ""
 echo ""
 
 echo $PUBKEY
+
+# Reloads the current session with the new .bashrc. This better work from the get go hahaha
+source ~/.bahsrc
