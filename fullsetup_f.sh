@@ -33,15 +33,15 @@ fi
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
 
 # Donwload the sshconfig file
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/m_ssh_config -O $HOME_PREFIX"/.ssh/config"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/ssh_config -O $HOME_PREFIX"/.ssh/config"
 
 # Download the reverse ssh helper script to the ~/bin
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell1 -O $HOME_PREFIX"/bin/revshell1"
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell2 -O $HOME_PREFIX"/bin/revshell2"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/revshell1 -O $HOME_PREFIX"/bin/revshell1"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/revshell2 -O $HOME_PREFIX"/bin/revshell2"
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshell1 -O $HOME_PREFIX"/bin/killrevshell1"
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshell2 -O $HOME_PREFIX"/bin/killrevshell2"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/killrevshell1 -O $HOME_PREFIX"/bin/killrevshell1"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/killrevshell2 -O $HOME_PREFIX"/bin/killrevshell2"
 
 # Bonus: download youtube-dl script via termux
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_PREFIX"/bin/termux-url-opener"
@@ -53,7 +53,7 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/youtube-dl.
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/update-config -O $HOME_PREFIX"/bin/update-config"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_PREFIX"/bin/update-config"
 
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*

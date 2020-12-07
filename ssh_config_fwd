@@ -1,0 +1,15 @@
+Host mrevshell
+  Hostname 127.0.0.1
+  Port 25324
+	User u0_a110
+  ServerAliveInterval 30
+  IdentityFile ~/.ssh/id_rsa
+  ForwardAgent yes
+ 
+Host frevshell
+  Hostname 127.0.0.1
+  Port 25325 
+  User u0_a208
+  ServerAliveInterval 30
+  IdentityFile ~/.ssh/id_rsa
+  ForwardAgent yes
