@@ -33,7 +33,7 @@ fi
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
 
 # Donwload the sshconfig file
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/ssh_config -O $HOME_PREFIX"/.ssh/config"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
 
 # Download the reverse ssh helper script to the ~/bin
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/revshell1 -O $HOME_PREFIX"/bin/revshell1"
