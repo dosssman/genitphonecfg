@@ -69,7 +69,7 @@ if [ ! -f $HOME_PREFIX"/.ssh/id_rsa" ]; then
 	ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
 
-MY_SENDGRID_KEY=$(cat $HOME_PREFIX"/SENDGRID_API_KEY")
+MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
 
 DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
 PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
