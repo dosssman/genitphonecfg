@@ -3,7 +3,7 @@
 # Delete some potential conflicting files
 HOME_PREFIX=$HOME # Production mode: affect $HOME
 AUTH_FILEPATH=$HOME_PREFIX"/.ssh/authorized_keys"
-HOME_BIN_PREFIX=$HOME_PREFIX"/bin/"
+HOME_BIN_PREFIX=$HOME_PREFIX"/bin"
 
 # This is mainly usefull for debugging, to make sure the home folder are create
 if [ ! -d $HOME_PREFIX ]; then
@@ -36,27 +36,27 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc 
 # Donwload the sshconfig file
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
 
+# Bonus: youtubedl config
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/yt-dlp.conf -O $HOME_PREFIX"/.config/yt-dlp.conf"
+
 # Downdload the port and remote hostname in case there was an update upstream
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/DEFAULT_PORT -O $HOME_BIN_PREFIX"/DEFAULT_PORT"
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/REMOTE_HOSTNAME -O $HOME_BIN_PREFIX"/REMOTE_HOSTNAME"
 
 # Download the reverse ssh helper script to the ~/bin
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/revshell1 -O $HOME_BIN_PREFIX"/bin/revshell"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/revshell1 -O $HOME_BIN_PREFIX"/revshell"
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/killrevshell1 -O $HOME_BIN_PREFIX"/bin/killrevshell"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/killrevshell1 -O $HOME_BIN_PREFIX"/killrevshell"
 
 # Bonus: download youtube-dl script via termux
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_BIN_PREFIX"/bin/termux-url-opener"
-
-# Bonus: youtubedl config
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/yt-dlp.conf -O $HOME_BIN_PREFIX"/.config/yt-dlp.conf"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_BIN_PREFIX"/termux-url-opener"
 
 # Downloading the SENDGRID_API_KEY
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/SENDGRID_API_KEY -O $HOME_BIN_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_BIN_PREFIX"/bin/update-config"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_BIN_PREFIX"/update-config"
 
 # Set executable flag to all the scripts in ~/bin
 chmod +x $HOME_PREFIX"/bin"/*
