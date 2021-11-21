@@ -52,7 +52,7 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/yt-dlp.conf -O $HOME_PREFIX"/.config/yt-dlp.conf"
 
 # Downloading the SENDGRID_API_KEY
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_PREFIX"/SENDGRID_API_KEY"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/SENDGRID_API_KEY -O $HOME_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_PREFIX"/bin/update-config"
