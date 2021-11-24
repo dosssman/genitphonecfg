@@ -1,5 +1,10 @@
 # genitphonecfg
 
+## TODOs
+- [ ] Handle automatic mailing of the newly generating ssh key if needs be
+- [ ] Handle changing username of termux itself when new accoutn is created
+- [ ] Add support for special account that handle this task, so as to not have root@ in the revshell and related scripts.
+
 ## Naming
 
 `m/`: male
