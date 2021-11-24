@@ -3,7 +3,7 @@
 # Delete some potential conflicting files
 HOME_PREFIX=$HOME # Production mode: affect $HOME
 AUTH_FILEPATH=$HOME_PREFIX"/.ssh/authorized_keys"
-HOME_BIN_PREFIX="${HOME_PREFIX}""/bin"
+HOME_BIN_PREFIX=$HOME_PREFIX"/bin"
 
 # This is mainly usefull for debugging, to make sure the home folder are create
 if [ ! -d $HOME_PREFIX ]; then
@@ -34,32 +34,33 @@ fi
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
 
 # Donwload the sshconfig file
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
+# wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
 
 # Bonus: youtubedl config
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/yt-dlp.conf -O $HOME_PREFIX"/.config/yt-dlp.conf"
 
 # Downdload the port and remote hostname in case there was an update upstream
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/DEFAULT_PORT -O $HOME_BIN_PREFIX"/DEFAULT_PORT"
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/REMOTE_HOSTNAME -O $HOME_BIN_PREFIX"/REMOTE_HOSTNAME"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/REMOTE_HOSTNAME -O $HOME_BIN_PREFIX"/REMOTE_HOSTNAME"
 
 # Download the reverse ssh helper script to the ~/bin
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/revshell1 -O $HOME_BIN_PREFIX"/revshell"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell -O $HOME_BIN_PREFIX"/revshell"
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/killrevshell1 -O $HOME_BIN_PREFIX"/killrevshell"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshell -O $HOME_BIN_PREFIX"/killrevshell"
 
 # Bonus: download youtube-dl script via termux
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_BIN_PREFIX"/termux-url-opener"
 
 # Downloading the SENDGRID_API_KEY
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/SENDGRID_API_KEY -O $HOME_BIN_PREFIX"/SENDGRID_API_KEY"
+# TODO: more private handling of this becuase Sendgrid will detect it if in public repository
+# wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_BIN_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_BIN_PREFIX"/update-config"
 
 # Set executable flag to all the scripts in ~/bin
-chmod +x $HOME_PREFIX"/bin"/*
+chmod +x ~/bin/*
 
 # Generating the public key of the current device
 pkg install openssh coreutils curl -y # curl will be used to send the public key via mail
@@ -69,23 +70,24 @@ if [ ! -f $HOME_PREFIX"/.ssh/id_rsa" ]; then
 	ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
 
-MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
+# MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
 
 DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
 PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
 
-curl --request POST \
-  --url https://api.sendgrid.com/v3/mail/send \
-  --header "Authorization: Bearer ${MY_SENDGRID_KEY}" \
-  --header 'Content-Type: application/json' \
-	--data "$(echo '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "'${PUBKEY}'"}]}')"
+# curl --request POST \
+#   --url https://api.sendgrid.com/v3/mail/send \
+#   --header "Authorization: Bearer ${MY_SENDGRID_KEY}" \
+#   --header 'Content-Type: application/json' \
+# 	--data "$(echo '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "'${PUBKEY}'"}]}')"
+
+# echo ""
+# echo ""
+# echo "### ----------------------------------------------------------------------###"
+# echo ""
+# echo ""
 
 echo ""
-echo ""
-echo "### ----------------------------------------------------------------------###"
-echo ""
-echo ""
-
 echo $PUBKEY
 
 # Reloads the current session with the new .bashrc

@@ -72,7 +72,7 @@ fi
 
 # MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
 
-# DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
+DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
 PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
 
 # curl --request POST \
@@ -87,6 +87,7 @@ PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
 # echo ""
 # echo ""
 
+echo ""
 echo $PUBKEY
 
 # Reloads the current session with the new .bashrc
