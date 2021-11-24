@@ -1,5 +1,10 @@
 # genitphonecfg
 
+## Naming
+
+`m/`: male
+`f/`: female
+
 ## Memo / TODO: Nested SSH tunnels
 
 [MyPC]

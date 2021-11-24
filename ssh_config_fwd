@@ -1,6 +1,6 @@
 Host mrevshell
   Hostname 127.0.0.1
-  Port 25324
+  Port 9997
 	User u0_a110
   ServerAliveInterval 30
   IdentityFile ~/.ssh/id_rsa
@@ -8,7 +8,7 @@ Host mrevshell
  
 Host frevshell
   Hostname 127.0.0.1
-  Port 25325 
+  Port 9996 
   User u0_a208
   ServerAliveInterval 30
   IdentityFile ~/.ssh/id_rsa
