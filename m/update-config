@@ -53,7 +53,8 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshel
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_BIN_PREFIX"/termux-url-opener"
 
 # Downloading the SENDGRID_API_KEY
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_BIN_PREFIX"/SENDGRID_API_KEY"
+# TODO: more private handling of this becuase Sendgrid will detect it if in public repository
+# wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_BIN_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_BIN_PREFIX"/update-config"
@@ -69,22 +70,22 @@ if [ ! -f $HOME_PREFIX"/.ssh/id_rsa" ]; then
 	ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
 
-MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
+# MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
 
-DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
-PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
+# DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
+# PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
 
-curl --request POST \
-  --url https://api.sendgrid.com/v3/mail/send \
-  --header "Authorization: Bearer ${MY_SENDGRID_KEY}" \
-  --header 'Content-Type: application/json' \
-	--data "$(echo '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "'${PUBKEY}'"}]}')"
+# curl --request POST \
+#   --url https://api.sendgrid.com/v3/mail/send \
+#   --header "Authorization: Bearer ${MY_SENDGRID_KEY}" \
+#   --header 'Content-Type: application/json' \
+# 	--data "$(echo '{"personalizations": [{"to": [{"email": "'${DEST_EMAIL}'"}]}],"from": {"email": "doss@genitconfig.me"},"subject": "Generate SSH Public Key","content": [{"type": "text/plain", "value": "'${PUBKEY}'"}]}')"
 
-echo ""
-echo ""
-echo "### ----------------------------------------------------------------------###"
-echo ""
-echo ""
+# echo ""
+# echo ""
+# echo "### ----------------------------------------------------------------------###"
+# echo ""
+# echo ""
 
 echo $PUBKEY
 
