@@ -1,6 +1,5 @@
 #!/bin/bash
 killall sshd
-sshd -p 8022
 
 REVERSE_SHELL_PORT=$(cat ~/bin/DEFAULT_PORT)
 REMOTE_HOSTNAME=$(cat ~/bin/REMOTE_HOSTNAME)
