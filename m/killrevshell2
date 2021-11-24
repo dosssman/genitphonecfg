@@ -1,7 +1,0 @@
-#!/bin/bash
-killall sshd
-sshd -p 8022
-
-pkill -f "ssh -R 25324:127.0.0.1:8022 f-victory -fNT"
-pkill -f "ssh -R 25850:127.0.0.1:5901 f-victory -fNT"
-
