@@ -60,7 +60,7 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_BIN_PREFIX"/update-config"
 
 # Set executable flag to all the scripts in ~/bin
-chmod +x $HOME_BIN_PREFIX"/*"
+chmod +x ~/bin/*
 
 # Generating the public key of the current device
 pkg install openssh coreutils curl -y # curl will be used to send the public key via mail
@@ -73,7 +73,7 @@ fi
 # MY_SENDGRID_KEY=$(cat $HOME_BIN_PREFIX"/SENDGRID_API_KEY")
 
 # DEST_EMAIL="doss@ai.cs.kobe-u.ac.jp"
-# PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
+PUBKEY="$(cat ~/.ssh/id_rsa.pub)"
 
 # curl --request POST \
 #   --url https://api.sendgrid.com/v3/mail/send \
