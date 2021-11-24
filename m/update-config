@@ -34,7 +34,7 @@ fi
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc -O $HOME_PREFIX"/.bashrc"
 
 # Donwload the sshconfig file
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
+# wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
 
 # Bonus: youtubedl config
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/yt-dlp.conf -O $HOME_PREFIX"/.config/yt-dlp.conf"
@@ -44,10 +44,10 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/m/DEFAULT_P
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/REMOTE_HOSTNAME -O $HOME_BIN_PREFIX"/REMOTE_HOSTNAME"
 
 # Download the reverse ssh helper script to the ~/bin
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell1 -O $HOME_BIN_PREFIX"/revshell"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/revshell -O $HOME_BIN_PREFIX"/revshell"
 
 # Donw the vnc forwarding script to the ~/bin folder and apply the permissions
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshell1 -O $HOME_BIN_PREFIX"/killrevshell"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/killrevshell -O $HOME_BIN_PREFIX"/killrevshell"
 
 # Bonus: download youtube-dl script via termux
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-opener -O $HOME_BIN_PREFIX"/termux-url-opener"
