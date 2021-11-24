@@ -57,7 +57,7 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/termux-url-
 # wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/SENDGRID_API_KEY -O $HOME_BIN_PREFIX"/SENDGRID_API_KEY"
 
 # Downloading the standalone update script
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/update-config -O $HOME_BIN_PREFIX"/update-config"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/m/update-config -O $HOME_BIN_PREFIX"/update-config"
 
 # Set executable flag to all the scripts in ~/bin
 chmod +x ~/bin/*
