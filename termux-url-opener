@@ -1,4 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
+source ~/.bashrc
+
 CHOICES=("0: Annuler" "1: Youtube Video 480p" "2: Youtube Audio MP3")
 
 for (( IDX=0; IDX<"${#CHOICES[@]}" ; IDX++ )); do
