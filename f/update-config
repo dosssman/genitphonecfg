@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/dot_bashrc 
 # wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/ssh_config -O $HOME_PREFIX"/.ssh/config"
 
 # Bonus: youtubedl config
-wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/yt-dlp.conf -O $HOME_PREFIX"/.config/yt-dlp.conf"
+wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/yt-dlp.conf -O $HOME_PREFIX"/.config/yt-dlp.conf"
 
 # Downdload the port and remote hostname in case there was an update upstream
 wget https://raw.githubusercontent.com/dosssman/genitphonecfg/master/f/DEFAULT_PORT -O $HOME_BIN_PREFIX"/DEFAULT_PORT"
